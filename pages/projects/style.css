@@ -1,0 +1,186 @@
+:root {
+  --p: #48bfe3;
+  --s: #f4f4f4;
+  --S: #caf0f8;
+  font-size: 16px;
+  font-family: "Source Code Pro", monospace;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.isDesable {
+  color: lightgray;
+  text-decoration: line-through;
+}
+
+.navbar {
+  color: var(--s);
+  position: sticky;
+  z-index: 1;
+  top: 0px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: var(--p);
+  display: flex;
+  align-items: center;
+}
+
+.git {
+  flex: 0.5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.bc {
+  margin-left: 1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbar-nav {
+  flex: 2.5;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav-item {
+  margin: 1rem;
+}
+header {
+  background-color: #48bfe3;
+  height: 30vh;
+  color: var(--s);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 1rem;
+}
+main {
+  padding: 20px;
+  border-left-color: var(--p);
+  border-left-width: 10px;
+  border-left-style: solid;
+  border-bottom-color: var(--p);
+  border-bottom-width: 10px;
+  border-bottom-style: solid;
+  border-right-color: var(--p);
+  border-right-width: 10px;
+  border-right-style: solid;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: #c8e7ff;
+}
+.project {
+  width: 200px;
+  height: 300px;
+  /* background-image: url(/GitHub_Pages/img/price.png); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  /* border: 1px solid black; */
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+}
+.project img {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.project-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  color: white;
+  padding: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0));
+  transform: translateY(90px);
+  transition: all 300ms ease-in;
+  border-radius: 10px;
+}
+.project:hover .project-container {
+  transform: translateY(0px);
+}
+.project-container h3 {
+  text-transform: capitalize;
+  margin: 10px;
+  font-size: 1rem;
+}
+.project-container p {
+  margin: 0px 10px;
+  font-size: 0.9rem;
+}
+
+.project-container a {
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid var(--p);
+  border-radius: 10px;
+  background-color: var(--p);
+  font-size: 1rem;
+}
+footer {
+  background-color: #343a40;
+  margin-top: auto;
+  min-height: 10vh;
+}
+
+@media (min-width: 0px) {
+  :root {
+    font-size: 10px;
+  }
+  .bc,
+  .git {
+    display: none;
+  }
+  .project-container {
+    transform: translateY(0px);
+  }
+}
+@media (min-width: 320px) {
+  .git {
+    display: flex;
+  }
+}
+@media (min-width: 480px) {
+  :root {
+    font-size: 12px;
+  }
+  .bc {
+    display: flex;
+  }
+}
+@media (min-width: 800px) {
+  :root {
+    font-size: 16px;
+  }
+  header {
+    flex-direction: row;
+  }
+  .logo {
+    width: 200px;
+  }
+  .project-container {
+    transform: translateY(70px);
+  }
+}
