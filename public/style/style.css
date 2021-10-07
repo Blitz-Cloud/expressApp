@@ -23,6 +23,7 @@ img {
 body {
   color: white;
   background-color: var(--s);
+   
 }
 
 .isDesable {
@@ -123,7 +124,7 @@ main {
 
 /* animation */
 #anime {
-  position: relative;
+  position:relative;
   width: max-content;
   margin: 0 10px;
   display: inline-block;

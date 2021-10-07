@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 app.get("/project", (req, res) => {
-  res.render("pages/projects/projects.ejs");
+  res.render("projects/projects.ejs");
 });
 
 app.get("*", (req, res) => {
