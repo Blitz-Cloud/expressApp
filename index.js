@@ -15,6 +15,10 @@ app.use(express.static("Pages"));
 app.get("/", (req, res) => {
   res.render("home");
 });
+app.get("/project",(req,res)=>{
+  res.render("pages/projects/index.ejs");
+})
+
 app.get("*", (req, res) => {
-  app.render("404");
+  res.render("error");
 });

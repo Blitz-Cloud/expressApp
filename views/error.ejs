@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <style>
+      body {
+        color: black;
+      }
+    </style>
     <title>404</title>
   </head>
   <body>
-    <%- include(templates/navbar) %>
-
+     <%- include("templates/navbar") %>
     <h1>Ops, I don'k know that path</h1>
   </body>
 </html>
