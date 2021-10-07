@@ -11,13 +11,13 @@ app.listen(port, () => {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, "/public")));
-app.use(express.static("Pages"));
+
 app.get("/", (req, res) => {
   res.render("home");
 });
-app.get("/project",(req,res)=>{
-  res.render("pages/projects/index.ejs");
-})
+app.get("/project", (req, res) => {
+  res.render("pages/projects/projects.ejs");
+});
 
 app.get("*", (req, res) => {
   res.render("error");
