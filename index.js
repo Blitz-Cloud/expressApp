@@ -16,8 +16,25 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 app.get("/project", (req, res) => {
-  res.render("projects/projects.ejs");
+  try{
+    res.render("projects/projects.ejs");
+  }catch{
+     res.render("error");
+  }
 });
+// Here are the links for my projects
+
+app.get("/price", (req, res) => {
+  res.render("price/price.ejs");
+});
+app.get("/troll", (req, res) => {
+  res.render("price/index.ejs");
+});
+app.get("/museum_of_candy", (req, res) => {
+  res.render("");
+});
+// 
+
 
 app.get("*", (req, res) => {
   res.render("error");
