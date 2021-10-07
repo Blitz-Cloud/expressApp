@@ -1,13 +1,13 @@
 const express = require("express");
 const res = require("express/lib/response");
 const path = require("path");
-
 const app = express();
 const port = 8080;
 
 app.listen(port, () => {
   console.log("The server is listening on port 8080");
 });
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, "/public")));
@@ -15,27 +15,23 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.get("/", (req, res) => {
   res.render("home");
 });
-app.get("/project", (req, res) => {
-  try{
-    res.render("projects/projects.ejs");
-  }catch{
-     res.render("error");
-  }
+app.get("/projects", (req, res) => {
+  res.render("pages/projects.ejs");
 });
-// Here are the links for my projects
 
-app.get("/price", (req, res) => {
-  res.render("price/price.ejs");
+app.get("/projects/price", (req, res) => {
+  res.render("pages/price");
 });
-app.get("/troll", (req, res) => {
-  res.render("price/index.ejs");
+app.get("/projects/candyM", (req, res) => {
+  res.render("pages/candy");
 });
-app.get("/museum_of_candy", (req, res) => {
-  res.render("");
+app.get("/projects/troll", (req, res) => {
+  res.render("pages/troll/button");
 });
-// 
-
+app.get("/projects/troll/nvc", (req, res) => {
+  res.render("pages/troll/nvc");
+});
 
 app.get("*", (req, res) => {
-  res.render("error");
+  res.status(404).render("error");
 });
