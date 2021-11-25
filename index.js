@@ -1,12 +1,12 @@
 const express = require("express");
-const res = require("express/lib/response");
 const path = require("path");
 const app = express();
-const port = 8080;
+const port = 443;
 
 app.listen(port, () => {
-  console.log("The server is listening on port 8080");
+  console.log("The server is listening on port 443");
 });
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
@@ -32,6 +32,4 @@ app.get("/projects/troll/nvc", (req, res) => {
   res.render("pages/troll/nvc");
 });
 
-app.get("*", (req, res) => {
-  res.status(404).render("error");
-});
+
