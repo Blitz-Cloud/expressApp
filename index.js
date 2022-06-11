@@ -4,9 +4,8 @@ const app = express();
 const port = 8080;
 
 app.listen(port, () => {
-  console.log("The server is listening on port 443");
+  console.log("The server is listening on port " + port);
 });
-
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
@@ -31,5 +30,3 @@ app.get("/projects/troll", (req, res) => {
 app.get("/projects/troll/nvc", (req, res) => {
   res.render("pages/troll/nvc");
 });
-
-
